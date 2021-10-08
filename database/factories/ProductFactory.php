@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
-        'store_id' => factory(\App\Store::class),
+        'store_id' => \App\Store::factory(),
         'name' => $faker->company,
         'price' => $faker->numberBetween(349,350),
         'description' => $faker->sentence,

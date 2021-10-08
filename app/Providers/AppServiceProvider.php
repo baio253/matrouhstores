@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Gate;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         if (env('APP_ENV') != 'local') {
-            \URL::forceScheme('https');
+            URL::forceScheme('https');
         }
     }
 }

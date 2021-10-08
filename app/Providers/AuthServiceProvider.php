@@ -7,7 +7,7 @@ use App\Store;
 use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-use function foo\func;
+
 
 class AuthServiceProvider extends ServiceProvider
 {
