@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Store;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Image;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

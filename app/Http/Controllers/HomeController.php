@@ -7,7 +7,7 @@ use App\Role;
 use App\SubCategory;
 use App\User;
 use Illuminate\Http\Request;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {

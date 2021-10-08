@@ -70,7 +70,7 @@ class User extends Authenticatable
         return $this->roles->map->abilities->flatten()->pluck('name')->unique();
     }
 
-    public function order($product_id, $comment, $quantity)
+    function order($product_id, $comment, $quantity)
     {
         $this->products()->syncWithoutDetaching([$product_id => ['comment' => $comment, 'quantity' => $quantity]]);
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,11 +44,9 @@ class UserController extends Controller
      */
     public function store()
     {
-        request()->validate([
-            'quantity' => ['min:1', 'required'],
-        ]);
-
-        auth()->user()->order(\request('product_id'), \request('comment'), \request('quantity'));
+        request()->validate(['quantity' => ['min:1', 'required']]);
+        // dd(User::find(auth()->user()->id));
+        User::find(auth()->user()->id)->order(\request('product_id'), \request('comment'), \request('quantity'));
         return redirect(route('myCart'));
     }
 
@@ -93,7 +92,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        auth()->user()->cancel(Product::find($id));
+
+        User::find(auth()->user()->id)->cancel(Product::find($id));
         return redirect(route('myCart'));
     }
 }

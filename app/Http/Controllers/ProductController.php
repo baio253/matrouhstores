@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Store;
-use Image;
+use Intervention\Image\Facades\Image;
 use DemeterChain\A;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
